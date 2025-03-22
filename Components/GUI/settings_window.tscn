@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=3 uid="uid://bism5tli4c3rf"]
+
+[ext_resource type="Script" uid="uid://dpofxp7npbp6y" path="res://Components/GUI/settings_window.gd" id="1_8lh1i"]
+[ext_resource type="ButtonGroup" uid="uid://cork8fbwbjm1n" path="res://Components/GUI/difficulty_choices.tres" id="1_hjhna"]
+[ext_resource type="Texture2D" uid="uid://e6lmwpw32bta" path="res://Assets/GUI/UI_Flat_Frame03a.png" id="2_elmd8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elmd8"]
+bg_color = Color(0.14902, 0.478431, 0.913725, 1)
+border_width_left = 4
+border_width_top = 36
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.14902, 0.478431, 0.913725, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+expand_margin_left = 4.0
+expand_margin_top = 36.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[node name="SettingsWindow" type="Window"]
+title = "settings"
+position = Vector2i(0, 36)
+size = Vector2i(200, 200)
+theme_override_styles/embedded_border = SubResource("StyleBoxFlat_elmd8")
+script = ExtResource("1_8lh1i")
+
+[node name="Background" type="NinePatchRect" parent="."]
+offset_left = 8.0
+offset_top = 135.0
+offset_right = 192.0
+offset_bottom = 192.0
+texture = ExtResource("2_elmd8")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="EasyRadioButton" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_group = ExtResource("1_hjhna")
+text = "Easy"
+
+[node name="MediumRadioButton" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_group = ExtResource("1_hjhna")
+text = "Medium"
+
+[node name="HardRadioButton" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_group = ExtResource("1_hjhna")
+text = "Hard"
+
+[node name="Spacer" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MusicContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer/MusicContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music"
+
+[node name="MusicHSlider" type="HSlider" parent="MarginContainer/VBoxContainer/MusicContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="SFXContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="SFXLabel" type="Label" parent="MarginContainer/VBoxContainer/SFXContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX"
+
+[node name="SFXHSlider" type="HSlider" parent="MarginContainer/VBoxContainer/SFXContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="Spacer2" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3

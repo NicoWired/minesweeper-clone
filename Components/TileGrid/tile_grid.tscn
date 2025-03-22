@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbm0qirwtpdhb"]
+
+[ext_resource type="Script" uid="uid://cedur1jgcjml2" path="res://Components/TileGrid/tile_grid.gd" id="1_j5cf6"]
+[ext_resource type="Script" uid="uid://bmdejljp8aya0" path="res://sfx_player.gd" id="2_tfd5k"]
+
+[node name="TileGrid" type="GridContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_j5cf6")
+
+[node name="RevealPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("2_tfd5k")
+
+[node name="MineHitPlaer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("2_tfd5k")

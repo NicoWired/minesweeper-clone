@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c3txcpt42qs6q"]
+
+[ext_resource type="Texture2D" uid="uid://do86vaegcuuer" path="res://Assets/GUI/UI_Flat_Bar08a.png" id="1_opkoh"]
+[ext_resource type="Texture2D" uid="uid://blcgglqqh5ffw" path="res://Assets/GUI/UI_Flat_Handle03a.png" id="1_p0xem"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p0xem"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4754t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p0xem"]
+texture = ExtResource("1_opkoh")
+texture_margin_left = 5.0
+texture_margin_top = 6.0
+texture_margin_right = 5.0
+texture_margin_bottom = 6.0
+draw_center = false
+
+[resource]
+Button/font_sizes/font_size = 12
+GridContainer/constants/h_separation = 0
+GridContainer/constants/v_separation = 0
+HSlider/icons/grabber = ExtResource("1_p0xem")
+HSlider/icons/grabber_highlight = ExtResource("1_p0xem")
+HSlider/styles/grabber_area = SubResource("StyleBoxEmpty_p0xem")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_4754t")
+HSlider/styles/slider = SubResource("StyleBoxTexture_p0xem")
+Label/font_sizes/font_size = 12
