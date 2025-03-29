@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://b2av3ole12e5k"]
+
+[ext_resource type="Texture2D" uid="uid://i6u2k5sppc2x" path="res://Assets/Sprites/UI_Flat_FrameSlot01b.png" id="1_skvjb"]
+
+[resource]
+texture = ExtResource("1_skvjb")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0

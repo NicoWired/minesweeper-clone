@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="minesweeper-clone"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://Source/Main/Main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-ExternalResourceLoader="*res://external_resource_loader.gd"
-SettingsLoader="*res://settings_loader.gd"
-GameState="*res://game_state.gd"
+ExternalResourceLoader="*res://Source/Autoloaders/external_resource_loader.gd"
+SettingsLoader="*res://Source/Autoloaders/settings_loader.gd"
+GameState="*res://Source/Autoloaders/game_state.gd"
 
 [display]
 
@@ -28,5 +28,5 @@ window/stretch/scale_mode="integer"
 
 [gui]
 
-theme/custom="res://minesweeper_clone_theme.tres"
+theme/custom="res://Assets/Themes/minesweeper_clone_theme.tres"
 theme/custom_font="res://Assets/Fonts/PublicPixel.otf"

@@ -1,0 +1,152 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4nfm16mec4kq"]
+
+[ext_resource type="Script" uid="uid://bkxdrgel5821d" path="res://Source/GUI/gui.gd" id="1_uiylq"]
+[ext_resource type="Texture2D" uid="uid://bppdnbeh8aopq" path="res://Assets/Sprites/Minesweeper_LAZARUS_61x61_mine_transparent.png" id="2_fese8"]
+[ext_resource type="Texture2D" uid="uid://dqnj3iiqybvir" path="res://Assets/Sprites/Minesweeper_LAZARUS_61x61_clock.png" id="3_k8gkt"]
+[ext_resource type="Texture2D" uid="uid://b8f22h4x74dl2" path="res://Assets/Sprites/wrench.png" id="4_mlssa"]
+[ext_resource type="Script" uid="uid://c2hdahdaaiao8" path="res://Source/GUI/settings_icon.gd" id="5_3gg25"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uiylq")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.239216, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MenuAndGameContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="MenuContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/MenuAndGameContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Spacer" type="TextureRect" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MinesLeftContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="MinesIcon" type="TextureRect" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/MinesLeftContainer"]
+layout_mode = 2
+texture = ExtResource("2_fese8")
+expand_mode = 3
+
+[node name="MinesLeft" type="Label" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/MinesLeftContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "123"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="StartButton" type="Button" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start!"
+
+[node name="TimeElapsedContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TimeIcon" type="TextureRect" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/TimeElapsedContainer"]
+layout_mode = 2
+texture = ExtResource("3_k8gkt")
+expand_mode = 3
+
+[node name="TimeElapsed" type="Label" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/TimeElapsedContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "21"
+
+[node name="SettingsIcon" type="TextureRect" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+texture = ExtResource("4_mlssa")
+expand_mode = 3
+script = ExtResource("5_3gg25")
+
+[node name="TileGridSpawner" type="PanelContainer" parent="MarginContainer/CenterContainer/MenuAndGameContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="PauseScreen" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.117647, 0.678431)
+
+[node name="PausedText" type="Label" parent="PauseScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Paused"
+
+[node name="VictoryText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -6.0
+offset_right = 54.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "You won!!
+
+Difficulty: Medium
+
+Time elapsed: 420"
+horizontal_alignment = 1
+vertical_alignment = 1
