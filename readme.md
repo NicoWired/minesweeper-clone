@@ -1,9 +1,3 @@
-yellow	ffa61f
-blue	267ae9
-gray	adb7c4
-
-light gray	CCCCD6
-dark gray	33333D
 
 
 assets used:
@@ -26,3 +20,8 @@ FREE 8BIT SFX Pack
 - Author: lmglolo
 - Source: https://lmglolo.itch.io/free-8bit-sfx
 - License: https://creativecommons.org/licenses/by-nd/4.0/
+
+2D Highlight Effect
+- Author: Lenrow
+- Source: https://godotshaders.com/shader/2d-highlight-effect/
+- License: https://creativecommons.org/publicdomain/zero/1.0/

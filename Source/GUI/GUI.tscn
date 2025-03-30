@@ -1,10 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4nfm16mec4kq"]
+[gd_scene load_steps=12 format=3 uid="uid://c4nfm16mec4kq"]
 
 [ext_resource type="Script" uid="uid://bkxdrgel5821d" path="res://Source/GUI/gui.gd" id="1_uiylq"]
 [ext_resource type="Texture2D" uid="uid://bppdnbeh8aopq" path="res://Assets/Sprites/Minesweeper_LAZARUS_61x61_mine_transparent.png" id="2_fese8"]
+[ext_resource type="Texture2D" uid="uid://bptn3uewgcwex" path="res://Assets/Sprites/UI_Flat_FrameSlot01a.png" id="3_773jl"]
 [ext_resource type="Texture2D" uid="uid://dqnj3iiqybvir" path="res://Assets/Sprites/Minesweeper_LAZARUS_61x61_clock.png" id="3_k8gkt"]
+[ext_resource type="Texture2D" uid="uid://i6u2k5sppc2x" path="res://Assets/Sprites/UI_Flat_FrameSlot01b.png" id="4_7kctl"]
 [ext_resource type="Texture2D" uid="uid://b8f22h4x74dl2" path="res://Assets/Sprites/wrench.png" id="4_mlssa"]
+[ext_resource type="Shader" uid="uid://t2gt666lw1na" path="res://Source/Shaders/highlight.gdshader" id="4_vaqsb"]
 [ext_resource type="Script" uid="uid://c2hdahdaaiao8" path="res://Source/GUI/settings_icon.gd" id="5_3gg25"]
+[ext_resource type="Shader" uid="uid://dntwxm1arq6ci" path="res://Source/Shaders/2d_highlight_effect.gdshader" id="9_88xi0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_773jl"]
+shader = ExtResource("4_vaqsb")
+shader_parameter/glow_color = Color(1, 1, 0, 1)
+shader_parameter/glow_intensity = 0.0
+shader_parameter/glow_width = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8pm2a"]
+shader = ExtResource("9_88xi0")
+shader_parameter/size_effect = 0.2
+shader_parameter/speed = 0.3
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -70,10 +88,22 @@ size_flags_horizontal = 3
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_right = 32
 
-[node name="StartButton" type="Button" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/MarginContainer"]
+[node name="StartButton" type="TextureButton" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/MarginContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "Start!"
+texture_normal = ExtResource("3_773jl")
+texture_pressed = ExtResource("4_7kctl")
+stretch_mode = 0
+
+[node name="StartLabel" type="Label" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/MarginContainer/StartButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "start"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TimeElapsedContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer"]
 clip_contents = true
@@ -92,6 +122,8 @@ text = "21"
 
 [node name="SettingsIcon" type="TextureRect" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer"]
 unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_773jl")
 layout_mode = 2
 size_flags_horizontal = 10
 texture = ExtResource("4_mlssa")
@@ -129,6 +161,7 @@ grow_vertical = 2
 text = "Game Paused"
 
 [node name="VictoryText" type="Label" parent="."]
+material = SubResource("ShaderMaterial_8pm2a")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

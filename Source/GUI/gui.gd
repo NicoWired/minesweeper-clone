@@ -5,6 +5,10 @@ signal settings_clicked # emitted when the settings icon is clicked
 func _ready() -> void:
 	# propagates the signal from the settings icon to the main scene
 	%SettingsIcon.settings_clicked.connect(func(): settings_clicked.emit())
+	
+	# align the "start" label with the texture button
+	%StartButton/StartLabel.global_position = %StartButton.global_position
+	%StartButton/StartLabel.custom_minimum_size = %StartButton.size
 
 func update_mines_left(new_value: String) -> void:
 	%MinesLeft.text = new_value
