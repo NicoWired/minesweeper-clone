@@ -4,13 +4,11 @@
 	</a>
 	&nbsp;&nbsp;&nbsp;
 	<a href="https://x.com/itsVohr" style="text-decoration:none">
-		<img alt="follow me on twitter/x" src="https://img.shields.io/twitter/follow/itsvohr
-		" />
+		<img alt="follow me on twitter/x" src="https://img.shields.io/twitter/follow/itsvohr" />
 	</a>
 	&nbsp;&nbsp;&nbsp;
 	<a href="https://bsky.app/profile/vohr.bsky.social" style="text-decoration:none">
-		<img alt="follow me on bluesky" src="https://img.shields.io/badge/BlueSky-follow!-000000?style=social&logo=bluesky
-		" />
+		<img alt="follow me on bluesky" src="https://img.shields.io/badge/BlueSky-follow!-000000?style=social&logo=bluesky" />
 	</a>
 </p>
 
