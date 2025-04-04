@@ -63,14 +63,10 @@ layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Spacer" type="TextureRect" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
 [node name="MinesLeftContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer"]
 clip_contents = true
 layout_mode = 2
-size_flags_horizontal = 10
+size_flags_horizontal = 3
 
 [node name="MinesIcon" type="TextureRect" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/MinesLeftContainer"]
 layout_mode = 2
@@ -85,13 +81,15 @@ text = "123"
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_right = 32
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
 
 [node name="StartButton" type="TextureButton" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/MarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("3_773jl")
 texture_pressed = ExtResource("4_7kctl")
 stretch_mode = 0
@@ -105,27 +103,33 @@ text = "start"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TimeElapsedContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer"]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TimeIcon" type="TextureRect" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/TimeElapsedContainer"]
+[node name="TimeElapsedContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TimeIcon" type="TextureRect" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/HBoxContainer/TimeElapsedContainer"]
 layout_mode = 2
 texture = ExtResource("3_k8gkt")
 expand_mode = 3
 
-[node name="TimeElapsed" type="Label" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/TimeElapsedContainer"]
+[node name="TimeElapsed" type="Label" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/HBoxContainer/TimeElapsedContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "21"
 
-[node name="SettingsIcon" type="TextureRect" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer"]
+[node name="SettingsIcon" type="TextureRect" parent="MarginContainer/CenterContainer/MenuAndGameContainer/MenuContainer/HBoxContainer"]
 unique_name_in_owner = true
-visible = false
 material = SubResource("ShaderMaterial_773jl")
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-size_flags_horizontal = 10
+size_flags_horizontal = 8
+size_flags_vertical = 4
 texture = ExtResource("4_mlssa")
 expand_mode = 3
 script = ExtResource("5_3gg25")

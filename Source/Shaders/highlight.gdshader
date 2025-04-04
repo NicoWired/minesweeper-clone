@@ -13,16 +13,16 @@ void vertex() {
 
 void fragment() {
 	vec4 original_color = texture(TEXTURE, UV);
-	
+
 	// Start with the original color
 	COLOR = original_color;
-	
+
 	// If this pixel has some transparency, check if it should be part of the outline
 	if (original_color.a < 0.98) {
 		// Sample in 8 directions to find edges
 		float outline_alpha = 0.0;
 		float size = glow_width * TEXTURE_PIXEL_SIZE.x;
-		
+
 		// Sample in neighboring pixels to detect edges
 		outline_alpha += texture(TEXTURE, UV + vec2(size, 0.0)).a;
 		outline_alpha += texture(TEXTURE, UV + vec2(-size, 0.0)).a;
@@ -32,7 +32,7 @@ void fragment() {
 		outline_alpha += texture(TEXTURE, UV + vec2(-size, size)).a;
 		outline_alpha += texture(TEXTURE, UV + vec2(size, -size)).a;
 		outline_alpha += texture(TEXTURE, UV + vec2(-size, -size)).a;
-		
+
 		// If any surrounding pixels have alpha, and current pixel has less alpha
 		// then this pixel should be part of the outline
 		if (outline_alpha > 0.0 && original_color.a < 0.5) {

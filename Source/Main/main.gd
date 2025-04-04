@@ -1,7 +1,7 @@
 extends Node
 
 const MARGIN_SIZE: int = 32
-const MENU_BAR_HEIGHT: int = 32
+const MENU_BAR_HEIGHT: int = 48
 
 var elapsed_time: Timer = Timer.new()
 var elapsed_seconds: int

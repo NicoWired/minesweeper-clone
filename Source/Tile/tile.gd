@@ -13,7 +13,7 @@ var explored: bool = false
 var flagged: bool = false
 var tile_sprite: Sprite2D = Sprite2D.new()
 var hit_sprite: Sprite2D = Sprite2D.new()
-#var revealed_sprite: Sprite2D = Sprite2D.new()
+var bg_sprite: Sprite2D = Sprite2D.new()
 var revealed_sprite: CompressedTexture2D
 var initialized: bool = false
 
@@ -34,11 +34,12 @@ func _ready() -> void:
 	set_revealed_sprite()
 	custom_minimum_size = Vector2(tile_size, tile_size)
 	
-	# Use the new helper method to set textures
 	set_sprite_texture(tile_sprite, ExternalResourceLoader.sprites["UNEXPLORED"])
 	set_sprite_texture(hit_sprite, ExternalResourceLoader.sprites["HIT"])
+	set_sprite_texture(bg_sprite, ExternalResourceLoader.sprites["MINES_0"])
 	
 	hit_sprite.visible = false
+	add_child(bg_sprite)
 	add_child(hit_sprite)
 	add_child(tile_sprite)
 	
