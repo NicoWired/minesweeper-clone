@@ -1,9 +1,9 @@
 <p align="center">
-	<a href="https://www.twitch.tv/vohr" style="text-decoration:none">
+	<a href="https://www.twitch.tv/nicowired" style="text-decoration:none">
 		<img alt="live gamedev and gaming!" src="https://img.shields.io/twitch/status/nicowired" />
 	</a>
 	&nbsp;&nbsp;&nbsp;
-	<a href="https://x.com/itsVohr" style="text-decoration:none">
+	<a href="https://x.com/nicowired" style="text-decoration:none">
 		<img alt="follow me on twitter/x" src="https://img.shields.io/twitter/follow/nicowired" />
 	</a>
 	&nbsp;&nbsp;&nbsp;
