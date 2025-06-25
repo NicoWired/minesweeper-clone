@@ -1,6 +1,12 @@
 class_name TileGrid
 extends GridContainer
-## Grid representing the minesweeper board
+## controls the entire tile and most of the game logic
+
+# signals
+signal mine_hit
+signal tile_pressed
+signal tile_flagged
+signal game_won
 
 # params
 var grid_size: Vector2
@@ -12,12 +18,6 @@ var total_flags: int = 0
 var tile_size: int
 var initialized: bool = false
 @onready var tile_amt: int = int(grid_size.x * grid_size.y)
-
-# signals
-signal mine_hit
-signal tile_pressed
-signal tile_flagged
-signal game_won
 
 
 func initialize(init_grid_size: Vector2, int_mine_amt: int, init_tile_size: int) -> void:

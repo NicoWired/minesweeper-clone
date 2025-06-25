@@ -1,5 +1,5 @@
 extends AudioStreamPlayer
-## This scrippt is used to control the volume of the sfx players
+## This script is used to control the volume of the sfx players
 
 
 func _ready() -> void:

@@ -49,7 +49,7 @@ Here's a full list of the assets used:
 
 **Complete UI Essential Pack Free**
 - Author: Crusenho Agus Hennihuno
-- Source: https://crusenho.itch.io
+- Source: https://crusenho.itch.io/complete-ui-essential-pack
 - License: https://creativecommons.org/licenses/by/4.0/
 
 **Happy Adventure**

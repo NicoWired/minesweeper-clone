@@ -1,5 +1,5 @@
 extends Node
-## Singleton to load resources from the project
+## Singleton to centralize resource loading
 
 var sprites: Dictionary
 var sfx: Dictionary

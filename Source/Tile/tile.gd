@@ -1,6 +1,11 @@
 class_name Tile
 extends Control
+## scene to represent every individual tile in the game
 
+# signals
+signal pressed	# emitted when the tile is pressed with the left mouse button
+signal two_buttons_click # emitted when the tile is pressed with both mouse buttons
+signal tile_flagged # emitted when the tile is flagged or unflagged
 
 # params
 var tile_size: int
@@ -17,10 +22,6 @@ var bg_sprite: Sprite2D = Sprite2D.new()
 var revealed_sprite: CompressedTexture2D
 var initialized: bool = false
 
-# signals
-signal pressed	# emitted when the tile is pressed with the left mouse button
-signal two_buttons_click # emitted when the tile is pressed with both mouse buttons
-signal tile_flagged # emitted when the tile is flagged or unflagged
 
 func initialize(init_adjacent_mines: int, init_coords: Vector2, init_mined: bool, init_tile_size: int = 32) -> void:
 	self.tile_size = init_tile_size
